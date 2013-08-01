@@ -33,12 +33,31 @@ function showPosition(position) {
     var latlon = position.coords.latitude+","+position.coords.longitude;
 
     var custom_map = "http://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=15&size=480x300&sensor=false&style=feature:road.local%7Celement:geometry%7Ccolor:0x00ff33%7Cweight:1%7Cvisibility:on&style=feature:landscape%7Celement:geometry.fill%7Ccolor:0x000000%7Cvisibility:on&style=feature:administrative%7Celement:labels%7Cweight:3.9%7Cvisibility:on%7Cinvert_lightness:true&style=feature:poi%7Cvisibility:simplified";
+    
+    var centerpos = new google.maps.LatLng(48.579400,7.7519);
 
-    var map_url="http://maps.googleapis.com/maps/api/staticmap?center="
-	+latlon+"&zoom=14&size=480x300&sensor=false";
+    var optionsGmaps = {
+	center:centerpos,
+	mapTypeId: google.maps.MapTypeId.ROADMAP,
+	zoom: 15,
+	size:"100%"
+    };
+ 
+    var map = new google.maps.Map(document.getElementById("mapholder"), optionsGmaps);
+    
+    var latlng;
+    
+    latlng = new google.maps.LatLng(lat, lon);
+ 
+    var marker = new google.maps.Marker({
+	position: latlng,
+	map: map,
+	title:"V"
+    });
 
-    document.getElementById("mapholder").innerHTML=
-	"<img class=\"img-polaroid\" src='"+custom_map+"'>";
+    map.panTo(latlng);
+
+//    Document(latlng);.getElementById("mapholder").innerHTML="<img class=\"img-polaroid\" src='"+map_url+"'>";
 }
 
 function errorCallback(error){
