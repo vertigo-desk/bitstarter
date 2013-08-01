@@ -93,6 +93,8 @@ function showPosition(position) {
   }
 ]
 
+    google.maps.visualRefresh = true;
+
     var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
     
     var optionsGmaps = {
@@ -102,8 +104,6 @@ function showPosition(position) {
 	    mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
 	}
     };
-
-
  
     var map = new google.maps.Map(document.getElementById("mapholder"), optionsGmaps);
     map.mapTypes.set('map_style', styledMap);
