@@ -95,6 +95,10 @@
       .footer a {
         color: #ccccff;
       }
+      #mapholder {
+      height: 300px;
+      width: 480px;
+      }
     </style>
   </head>
   <body>
@@ -126,14 +130,14 @@
       </div>
       <div class="row-fluid subheading">
 	<div class="span12">
-	  <p class="lead">Real-time geolocation for everyday's real life</p>
+	  <p class="lead">Real-time geolocation for everyday's life</p>
         </div>
       </div>
       <div class="row-fluid pitch">
-        <div class="span5 offset1 video">
-	  <img class="img-polaroid" src="http://placehold.it/480x300">
+        <!--div class="span5 offset1 video" -->
+	  <div class="span5 offset1 img-polaroid" id="mapholder" ></div>
 	  <!-- put map here -->
-	</div>
+	<!--/div-->
         <div class="span5 actions">
 	  <div class="span8 offset2">
 	    <div class="statistics">
