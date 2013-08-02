@@ -1,7 +1,7 @@
 function getLocation() {
     if (navigator.geolocation)
     {
-	var options = {timeout:60000, maximumAge:10000, enableHighAccuracy:true};	
+	var options = {timeout:600000, maximumAge:100000, enableHighAccuracy:true};	
 	navigator.geolocation.watchPosition(showPosition, errorCallback, options);
 
     }
